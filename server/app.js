@@ -221,7 +221,7 @@ app.get("/posts", async (req, res) => {
         const [posts] = await pool.query(`
             SELECT 
                 posts.id, posts.user_id, posts.title, posts.created_at, posts.files, 
-                posts.likes, posts.liked_by,  -- 🔥 ADD THESE
+                posts.likes, posts.liked_by,  
                 COALESCE(users.name, users.email) AS name,
                 users.image, users.email
             FROM posts

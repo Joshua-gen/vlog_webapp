@@ -1,7 +1,7 @@
 import {useState, useEffect, useRef} from "react";
 import {useAuth} from "../contexts/AuthContext";
 import API from "../services/api";
-import Comment from "./Comment"; // Adjust path
+import Comment from "./Comment";
 
 export default function PostCard({post, fetchPosts}) {
     const {user: currentUser} = useAuth();
@@ -14,7 +14,7 @@ export default function PostCard({post, fetchPosts}) {
     const [likers, setLiker] = useState([]);
     const [loadingLikers, setLoadingLikers] = useState(false);
 
-    // INSIDE PostCard component - ADD THESE:
+    // comment:
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
     const [loadingComments, setLoadingComments] = useState(false);
